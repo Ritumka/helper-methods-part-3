@@ -40,34 +40,11 @@
     </th>
   </tr>
 
-  <% @movies.each do |movie| %>
-    <tr>
-      <td>
-        <%= movie.id %>
-      </td>
-
-      <td>
-        <%= movie.title %>
-      </td>
-
-      <td>
-        <%= movie.description %>
-      </td>
-
-      <td>
-        <%= movie.image_url %>
-      </td>
-
-      <td>
-        <%= time_ago_in_words(movie.created_at) %> ago
-      </td>
-      <td>
-        <%= time_ago_in_words(movie.updated_at) %> ago
-      </td>
-
-      <td>
-        <%= link_to "Show details", movie %>
-      </td>
-    </tr>
-  <% end %>
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-3">
+        <%= render partial: "movies/movie_card", locals: { movie: movie } %>
+      </div>
+    <% end %>
+  </div>
 </table>
