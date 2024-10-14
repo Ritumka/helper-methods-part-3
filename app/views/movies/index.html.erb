@@ -10,41 +10,11 @@
 
 <hr>
 
-<table>
-  <tr>
-    <th>
-      ID
-    </th>
-
-    <th>
-      Title
-    </th>
-
-    <th>
-      Description
-    </th>
-
-    <th>
-      Image URL
-    </th>
-
-    <th>
-      Created at
-    </th>
-
-    <th>
-      Updated at
-    </th>
-
-    <th>
-    </th>
-  </tr>
-
   <div class="row">
     <% @movies.each do |movie| %>
       <div class="col-md-3">
-        <%= render partial: "movies/movie_card", locals: { movie: movie } %>
+        <%= render partial: "movies/movie", locals: { movie: movie } %>
       </div>
     <% end %>
   </div>
-</table>
+
